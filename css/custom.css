@@ -147,48 +147,35 @@ input{
 .tryit{
   margin: 6rem 0 0;
 }
-.orbox-diagonal{
-  position: relative;
-  display: inline;
-  text-align: center;
-  display: none;
-  background-image: url('../images/lines.png');
-  background-size: 100% 100%;
-  padding: 5rem 12rem;
-  border: white;
-  color: white;
-}
 .orbox-horizontal-small {
     background-image: url('../images/lines-h.png');
-    background-size: cover;
+    background-size: 100% 100%;
     text-align: center;
-    padding: 5rem 0;
+    padding: 2rem 0;
     background-position: center center;
-}
-.orbox-horizontal-large{
-  display:none;
+    font-size: 1.25rem;
 }
 .videobox{
   text-align: center;
   display:none;
 }
 a.vidlink{
-  width:100%;
-  height:100%;
   display: block;
   text-decoration: none;
   color: white;
   border: 1px solid transparent;
+  text-align: center;
+  padding: 5px 0px;
+  font-size: 1.25rem;
 }
 a.vidlink:hover{
   border: 1px solid white;
 }
 .text{
-  display: inline-block;
+  display: block;
   text-align: center;
   padding-top: 5px;
   padding-bottom: 20px;
-  width: 18rem;
 }
 .video{
   width: 200px;
@@ -203,9 +190,6 @@ a.vidlink:hover{
 .proof{
   background-color:#F3F3F3;
   padding:20px 0;
-}
-.proof .container{
-  
 }
 .proof-logo{
   width:190px;
@@ -322,9 +306,8 @@ hr.spacer{
     padding: 12rem 0 11rem;
   }
   .hero {
-    padding-bottom: 12rem;
+    padding-bottom: 2rem;
     text-align: left;
-    height: 165px;
   }
   .title {
     font-size: 3rem;
@@ -334,9 +317,6 @@ hr.spacer{
   }
   .tryit{
     margin: 2rem 0 2.5rem 0;
-  }
-  .orbox-horizontal-large{
-    display:none;
   }
   .videobox-small .video{
     width: 132px;
@@ -350,9 +330,6 @@ hr.spacer{
 
 /* Bigger than 750 */
 @media (min-width: 750px) {
-  .hero {
-    height: 190px;
-  }
   .title {
     font-size: 4rem;
   }
@@ -366,7 +343,7 @@ hr.spacer{
     padding: 14rem 0 15rem;
   }
   .hero {
-    padding: 16rem 0 14rem;
+    padding: 16rem 0 2.5rem;
   }
   .section-description {
     max-width: 60%;
@@ -381,12 +358,6 @@ hr.spacer{
     top: -40px;
     position: relative;
   }
-  .videobox-small{
-    display:none;
-  }
-  .orbox-horizontal-large{
-    display:block;
-  }
 }
 
 /* Bigger than 1000 */
@@ -395,21 +366,13 @@ hr.spacer{
     padding: 20rem 0 19rem;
   }
   .hero {
-    padding: 22rem 0;
+    padding: 16rem 0 3rem 0;
   }
   .title {
     font-size: 5rem;
   }
   .subtitle{
     font-size: 3rem;
-  }
-  .orbox-diagonal{
-    display: inline;
-    left: 40%;
-    top: 23.25rem;
-  }
-  .orbox-horizontal-large{
-    display:none;
   }
   .videobox{
     top: auto;
