@@ -380,3 +380,53 @@ hr.spacer{
     margin-left: 60px;
   }
 }
+
+/***** MODAL PROPERTIES *****/
+.modal-body{
+  padding: 3% 5%!important;
+}
+.modal-dialog{
+  margin: 0!important;
+  width: auto!important;
+}
+ .modal-content {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background:transparent;
+    border:none;
+    outline:none;
+}
+}
+.modal-content iframe {
+    border:none;
+    padding:0;
+    margin:0;
+}
+.close {
+  top: 0;
+  right: 0;
+  position: absolute;
+  margin: 0 !important;
+  line-height: 60px;
+  width: 60px;
+  height: 60px;
+  font-size: 80px;
+}
+/***** MEDIA QUERIES *****/
+ @media only screen and (max-width: 641px) {
+    /***** MODAL PROPERTIES *****/
+    .modal-body {
+        height:100px;
+        padding:0;
+        margin: 0;
+    }
+    .modal-content {
+        padding:0;
+        margin: 0;
+    }
+    .modal-dialog {
+        position: relative;
+        width: auto;
+        margin: 15px;
+    }
+}
