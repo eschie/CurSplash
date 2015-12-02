@@ -1,0 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@font-face {
+  font-family: 'Egyptian Slate Pro Bk';
+  src: local('Egyptian Slate Pro Bk'), local('Egyptian Slate Pro Bk'),
+         url('../fonts/EgyptianSlatePro-Bk.otf') format('opentype');
+}
