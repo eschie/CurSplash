@@ -111,7 +111,7 @@ ChromePhp::log('Page Loaded!');
       </div>
     </div>
     <div class="bodycover"></div>
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true" >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
@@ -134,7 +134,7 @@ ChromePhp::log('Page Loaded!');
           </div>
         </div>
         <div class="row">
-          <form action="//cur.us12.list-manage.com/subscribe/post?u=bad806e30593d1546c9ce360e&amp;id=2b2c3145a6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="tryit validate" target="_blank" novalidate>
+          <form action="//cur.us12.list-manage.com/subscribe/post-json?u=bad806e30593d1546c9ce360e&amp;id=2b2c3145a6&amp;c=?" method="get" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="tryit validate" target="_blank" novalidate>
             <div class="three columns">
               <input class="u-full-width" type="email" placeholder="Enter email address" id="exampleEmailInput" value="" name="EMAIL" class="email" id="mce-EMAIL" required>
             </div>
@@ -215,6 +215,7 @@ ChromePhp::log('Page Loaded!');
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script type="text/javascript" src="./js/bootstrap.js"></script>
       <script type="text/javascript" src="./js/app.js"></script>
+      <script type="text/javascript" src="./js/signup.js"></script>
       <script type="text/javascript">
           (function(){
               var _emailSent = "<?php if(isset($emailSent) && $emailSent == true) { echo $emailSent; }?>";

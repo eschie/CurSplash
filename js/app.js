@@ -33,5 +33,6 @@ $('.contactlink').on('click', function(){
   $('.contactform').css('display','block');
 });
 $('.bodycover, .closeform').on('click', function(){
+  console.log( 'cover clicked' );
   $('.bodycover, .contactform').css('display','none');
 });
