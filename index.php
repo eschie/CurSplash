@@ -1,3 +1,11 @@
+<?php
+// sendmail_path = /usr/sbin/sendmail -t -i;
+ini_set('display_errors', 'On');
+error_reporting(E_ALL);
+include './php/validate.php';
+include './php/ChromePhp.php';
+ChromePhp::log('Page Loaded!');
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -64,9 +72,17 @@
       <a class="closelink" href="#"><span class="closeform">X</span></a>
       <div class="section form">
         <div class="container container-ovr">
-          <form action="../php/form.php" style="font-family: 'Helvetica Neue', Arial, sans-serif;">
+          <form id="contactform" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" style="font-family: 'Helvetica Neue', Arial, sans-serif;">
             <div class="row">
               <div class="twelve columns">
+                <?php if(isset($hasError)) { //If errors are found ?>
+                    <p class="error">Please check if you've filled all the fields with valid information. Thank you.</p>
+                <?php } ?>
+
+                <?php if(isset($emailSent) && $emailSent == true) { //If email is sent ?>
+                    <p style="color:#0e90d2;"><strong>Email Successfully Sent!</strong></p>
+                    <p>Thanks, <strong><?php echo $name;?></strong>, for your message! Your email was successfully sent and I will be in touch with you soon.</p>
+                <?php } ?>
                 <label for="exampleRecipientInput">CONTACT US</label>
                 <select class="u-full-width" id="exampleRecipientInput">
                   <option value="Option 1">General Inquiry</option>
@@ -78,18 +94,18 @@
             </div>
             <div class="row">
               <div class="six columns">
-                <input class="u-full-width" type="email" placeholder="Name" value="" name="EMAIL" class="name">
+                <input class="u-full-width" type="text" placeholder="Name" value="" name="name" class="name">
               </div>
               <div class="six columns">
-                <input class="u-full-width" type="email" placeholder="Email" id="exampleEmailInput" value="" name="EMAIL" class="email" id="mce-EMAIL" required>
+                <input class="u-full-width" type="email" placeholder="Email" value="" name="email" class="email" id="email" required>
               </div>
             </div>
             <div class="row">
               <div class="twelve columns">
-                <textarea class="u-full-width" placeholder="Your Message" id="exampleMessage"></textarea>
+                <textarea class="u-full-width" placeholder="Your Message" name="message" id="message"></textarea>
               </div>
             </div>
-            <input class="button-primary" type="submit" name="subscribe" id="mc-embedded-subscribe" value="Submit">
+            <input class="button-primary" type="submit" name="subscribe" value="Submit">
           </form>
         </div>
       </div>
@@ -199,5 +215,14 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script type="text/javascript" src="./js/bootstrap.js"></script>
       <script type="text/javascript" src="./js/app.js"></script>
+      <script type="text/javascript">
+          (function(){
+              var _emailSent = "<?php if(isset($emailSent) && $emailSent == true) { echo $emailSent; }?>";
+              console.log(_emailSent);
+              if(_emailSent == true){
+                  alert('email sent');
+              }
+          })();
+      </script>
     </body>
   </html>
