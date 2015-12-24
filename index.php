@@ -12,10 +12,10 @@ ChromePhp::log('Page Loaded!');
     <!-- Basic Page Needs
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8">
-    <title>CUR | Professional pain therapy evolved into a patch. No drugs.</title>
+    <title>CUR | Professional pain therapy evolved into a patch.</title>
     <meta name="description" content="The most advanced pain relief made simple. No wires or bulky batteries. Try clinically proven electrical stimulation for faster, more effective pain relief.">
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="CUR | Professional pain therapy evolved into a patch. No drugs." />
+    <meta property="og:title" content="CUR | Professional pain therapy evolved into a patch." />
     <meta property="og:image" content="images/video.png" />
     <meta property="og:url" content="http://www.cur.me" />
     <meta property="og:description" content="The most advanced pain relief made simple. No wires or bulky batteries. Try clinically proven electrical stimulation for faster, more effective pain relief." />
