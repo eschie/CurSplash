@@ -7,3 +7,4 @@ RewriteCond %{HTTP_HOST} ^www.cur.me [NC]
 RewriteRule ^(.*)$ http://cur.me/$1 [L,R=301]
 RewriteCond %{THE_REQUEST} ^.*/index\.php
 RewriteRule ^(.*)index.php$ /$1 [R=301,L]
+RewriteRule ^(.*/)?\.git+ - [F,L]
