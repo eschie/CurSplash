@@ -99,7 +99,7 @@ ChromePhp::log('Page Loaded!');
                 <textarea class="u-full-width" placeholder="Your Message" name="contactMessage" id="message"></textarea>
               </div>
             </div>
-            <input class="button-primary" type="submit" name="submit" value="Submit">
+            <input class="button-primary" type="submit" name="contactSubmit" value="Submit">
           </form>
         </div>
       </div>
@@ -213,7 +213,9 @@ ChromePhp::log('Page Loaded!');
       <script type="text/javascript">
           (function(){
               var _emailSent = "<?php if(isset($emailSent) && $emailSent == true) { echo $emailSent; }?>";
-              console.log(_emailSent);
+              var _emailMsg = "<?php if(isset($msg)){ echo $msg; } ?>";
+              console.log("email sent? "+_emailSent);
+              console.log("email msg: "+_emailMsg);
               if(_emailSent == true){
                   alert('email sent');
               }

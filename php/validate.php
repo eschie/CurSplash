@@ -1,6 +1,6 @@
 <?php
 //If the form is submitted
-if(isset($_POST['submit'])) {
+if(isset($_POST['contactSubmit'])) {
 
   $purpose = trim($_POST['contactPurpose']);
 
@@ -14,7 +14,7 @@ if(isset($_POST['submit'])) {
   //Check to make sure sure that a valid email address is submitted
   if(trim($_POST['contactEmail']) == '')  {
     $hasError = true;
-  } else if (!eregi("^[A-Z0-9._%-]+@[A-Z0-9._%-]+\.[A-Z]{2,4}$", trim($_POST['contactEmail']))) {
+  } else if (!preg_match('/^[A-Z0-9._%-]+@[A-Z0-9._%-]+\.[A-Z]{2,4}$/i', trim($_POST['contactEmail']))) {
     $hasError = true;
   } else {
     $email = trim($_POST['contactEmail']);
