@@ -1,6 +1,7 @@
 <?php
 // sendmail_path = /usr/sbin/sendmail -t -i;
 ini_set('display_errors', 'On');
+// phpinfo();
 error_reporting(E_ALL);
 include './php/validate.php';
 include './php/ChromePhp.php';
@@ -72,37 +73,30 @@ ChromePhp::log('Page Loaded!');
       <a class="closelink" href="#"><span class="closeform">X</span></a>
       <div class="section form">
         <div class="container container-ovr">
-          <form id="contactform" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" style="font-family: 'Helvetica Neue', Arial, sans-serif;">
+          <form id="contactform" method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" style="font-family: 'Helvetica Neue', Arial, sans-serif;">
             <div class="row">
               <div class="twelve columns">
-                <?php if(isset($hasError)) { //If errors are found ?>
-                    <p class="error">Please check if you've filled all the fields with valid information. Thank you.</p>
-                <?php } ?>
 
-                <?php if(isset($emailSent) && $emailSent == true) { //If email is sent ?>
-                    <p style="color:#0e90d2;"><strong>Email Successfully Sent!</strong></p>
-                    <p>Thanks, <strong><?php echo $name;?></strong>, for your message! Your email was successfully sent and I will be in touch with you soon.</p>
-                <?php } ?>
                 <label for="exampleRecipientInput">CONTACT US</label>
-                <select class="u-full-width" id="exampleRecipientInput">
-                  <option value="Option 1">General Inquiry</option>
-                  <option value="Option 2">Jobs</option>
-                  <option value="Option 3">Media</option>
-                  <option value="Option 4">Partners/Distributors</option>
+                <select name="contactPurpose" class="u-full-width" id="exampleRecipientInput">
+                  <option value="General Inquiry">General Inquiry</option>
+                  <option value="Jobs">Jobs</option>
+                  <option value="Media">Media</option>
+                  <option value="Partners/Distributors">Partners/Distributors</option>
                 </select>
               </div>
             </div>
             <div class="row">
               <div class="six columns">
-                <input class="u-full-width" type="text" placeholder="Name" value="" name="name" class="name">
+                <input class="u-full-width" type="text" placeholder="Name" value="" name="contactName" class="name">
               </div>
               <div class="six columns">
-                <input class="u-full-width" type="email" placeholder="Email" value="" name="email" class="email" id="email" required>
+                <input class="u-full-width" type="email" placeholder="Email" value="" name="contactEmail" class="email" id="email" required>
               </div>
             </div>
             <div class="row">
               <div class="twelve columns">
-                <textarea class="u-full-width" placeholder="Your Message" name="message" id="message"></textarea>
+                <textarea class="u-full-width" placeholder="Your Message" name="contactMessage" id="message"></textarea>
               </div>
             </div>
             <input class="button-primary" type="submit" name="subscribe" value="Submit">
