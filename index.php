@@ -3,8 +3,8 @@
 ini_set('display_errors', 'On');
 // phpinfo();
 error_reporting(E_ALL);
-include './php/validate.php';
 include './php/ChromePhp.php';
+include './php/validate.php';
 ChromePhp::log('Page Loaded!');
 ?>
 <!DOCTYPE html>
