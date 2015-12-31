@@ -51,12 +51,10 @@ if(isset($_POST['contactSubmit'])) {
       if(mail($to_add,$subject,$message,$headers))
       {
         $msg = "Mail sent OK";
-        ChromePhp::log($msg);
       }
       else
       {
          $msg = "Error sending email!";
-         ChromePhp::log($msg);
       }
 
       $emailSent = true;
