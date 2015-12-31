@@ -3,7 +3,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.8);
   display: none;
 }
 input{
@@ -19,7 +19,7 @@ input{
   border-radius: 25px;
   margin: 0 auto;
   border: 1px solid #979797;
-  background-color: rgba(0,0,0,0.4);
+  background-color: #000000;
 }
 .closelink{
   text-decoration:none;
@@ -382,6 +382,9 @@ hr.spacer{
 }
 
 /***** MODAL PROPERTIES *****/
+.modal-backdrop.in {
+    opacity: 0.75;
+}
 .modal-body{
   padding: 3% 5%!important;
 }
@@ -395,7 +398,6 @@ hr.spacer{
     background:transparent;
     border:none;
     outline:none;
-}
 }
 .modal-content iframe {
     border:none;
