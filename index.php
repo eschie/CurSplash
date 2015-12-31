@@ -99,7 +99,7 @@ ChromePhp::log('Page Loaded!');
                 <textarea class="u-full-width" placeholder="Your Message" name="contactMessage" id="message"></textarea>
               </div>
             </div>
-            <input class="button-primary" type="submit" name="subscribe" value="Submit">
+            <input class="button-primary" type="submit" name="submit" value="Submit">
           </form>
         </div>
       </div>
