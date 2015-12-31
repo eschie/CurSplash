@@ -2,22 +2,17 @@
 //If the form is submitted
 if(isset($_POST['submit'])) {
 
-  //Check to make sure that the name field is not empty
-  if(trim($_POST['contactname']) == '') {
-    $hasError = true;
-  } else {
-    $name = trim($_POST['contactname']);
-  }
+  $purpose = trim($_POST['contactPurpose']);
 
-  //Check to make sure that the subject field is not empty
-  if(trim($_POST['subject']) == '') {
+  //Check to make sure that the name field is not empty
+  if(trim($_POST['contactName']) == '') {
     $hasError = true;
   } else {
-    $subject = trim($_POST['subject']);
+    $name = trim($_POST['contactName']);
   }
 
   //Check to make sure sure that a valid email address is submitted
-  if(trim($_POST['email']) == '')  {
+  if(trim($_POST['contactEmail']) == '')  {
     $hasError = true;
   } else if (!eregi("^[A-Z0-9._%-]+@[A-Z0-9._%-]+\.[A-Z]{2,4}$", trim($_POST['email']))) {
     $hasError = true;
@@ -26,7 +21,7 @@ if(isset($_POST['submit'])) {
   }
 
   //Check to make sure comments were entered
-  if(trim($_POST['message']) == '') {
+  if(trim($_POST['contactMessage']) == '') {
     $hasError = true;
   } else {
     if(function_exists('stripslashes')) {
@@ -38,12 +33,33 @@ if(isset($_POST['submit'])) {
 
   //If there is no error, send the email
   if(!isset($hasError)) {
-    $emailTo = 'support@cur.me'; //Put your own email address here
-    $body = "Name: $name \n\nEmail: $email \n\nSubject: $subject \n\nComments:\n $comments";
-    $headers = 'From: <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
+      $from_add = "support@cur.me";
 
-    mail($emailTo, "Contact Form Submission to Cur.me", $body, $headers);
-    $emailSent = true;
+      $to_add = "austin.eschenbach@gmail.com"; //<-- put your yahoo/gmail email address here
+
+      $subject = "Contact Form - $purpose";
+
+      $message = "Name: $name \r\n";
+      $message .= "Email: $email \r\n";
+      $message .= "Message: $comments";
+
+      $headers = "From: $from_add \r\n";
+      $headers .= "Reply-To: $from_add \r\n";
+      $headers .= "Return-Path: $from_add\r\n";
+      $headers .= "X-Mailer: PHP \r\n";
+
+      if(mail($to_add,$subject,$message,$headers))
+      {
+        $msg = "Mail sent OK";
+        ChromePhp::log($msg);
+      }
+      else
+      {
+         $msg = "Error sending email!";
+         ChromePhp::log($msg);
+      }
+
+      $emailSent = true;
   }
 
 }
