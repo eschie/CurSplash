@@ -1,10 +1,10 @@
 <?php
+include './php/validate.php';
 // sendmail_path = /usr/sbin/sendmail -t -i;
 ini_set('display_errors', 'On');
 // phpinfo();
 error_reporting(E_ALL);
 include './php/ChromePhp.php';
-include './php/validate.php';
 ChromePhp::log('Page Loaded!');
 ?>
 <!DOCTYPE html>
