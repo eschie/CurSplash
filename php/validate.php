@@ -14,10 +14,10 @@ if(isset($_POST['submit'])) {
   //Check to make sure sure that a valid email address is submitted
   if(trim($_POST['contactEmail']) == '')  {
     $hasError = true;
-  } else if (!eregi("^[A-Z0-9._%-]+@[A-Z0-9._%-]+\.[A-Z]{2,4}$", trim($_POST['email']))) {
+  } else if (!eregi("^[A-Z0-9._%-]+@[A-Z0-9._%-]+\.[A-Z]{2,4}$", trim($_POST['contactEmail']))) {
     $hasError = true;
   } else {
-    $email = trim($_POST['email']);
+    $email = trim($_POST['contactEmail']);
   }
 
   //Check to make sure comments were entered
@@ -25,9 +25,9 @@ if(isset($_POST['submit'])) {
     $hasError = true;
   } else {
     if(function_exists('stripslashes')) {
-      $comments = stripslashes(trim($_POST['message']));
+      $comments = stripslashes(trim($_POST['contactMessage']));
     } else {
-      $comments = trim($_POST['message']);
+      $comments = trim($_POST['contactMessage']);
     }
   }
 
