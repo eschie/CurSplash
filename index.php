@@ -1,10 +1,10 @@
 <?php
+include './php/ChromePhp.php';
 include './php/validate.php';
 // sendmail_path = /usr/sbin/sendmail -t -i;
 ini_set('display_errors', 'On');
 // phpinfo();
 error_reporting(E_ALL);
-include './php/ChromePhp.php';
 ChromePhp::log('Page Loaded!');
 ?>
 <!DOCTYPE html>
@@ -73,7 +73,7 @@ ChromePhp::log('Page Loaded!');
       <a class="closelink" href="#"><span class="closeform">X</span></a>
       <div class="section form">
         <div class="container container-ovr">
-          <form id="contactform" method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" style="font-family: 'Helvetica Neue', Arial, sans-serif;">
+          <form id="contactform" method="post" action="/" style="font-family: 'Helvetica Neue', Arial, sans-serif;">
             <div class="row">
               <div class="twelve columns">
 
@@ -211,15 +211,19 @@ ChromePhp::log('Page Loaded!');
       <script type="text/javascript" src="./js/app.js"></script>
       <script type="text/javascript" src="./js/signup.js"></script>
       <script type="text/javascript">
-          (function(){
-              var _emailSent = "<?php if(isset($emailSent) && $emailSent == true) { echo $emailSent; }?>";
-              var _emailMsg = "<?php if(isset($msg)){ echo $msg; } ?>";
-              console.log("email sent? "+_emailSent);
-              console.log("email msg: "+_emailMsg);
-              if(_emailSent == true){
-                  alert('email sent');
-              }
-          })();
+	(function(){
+	  if( window.location.href.indexOf("?submitted") > -1 ) {
+            var _emailMsg = '<h3 style=\"color:white;\">Thank you!</h3><h3 style=\"color:white;\">Thanks for getting in touch! Someone from our team will contact you as soon as we can.</h3>' ;
+	  } else if (window.location.href.indexOf("?failed") > -1 ) {
+            var _emailMsg = '<h3 style=\"color:white;\">Uh Oh!</h3><h3 style=\"color:white;\">There was a problem with our mail server. Please <a href=\"mailto:contact@cur.me?Subject=Contact%20Form%20Submission\" target=\"_top\">send us an email</a> and someone from our team will contact you as soon as we can.</h3>';
+	  }
+          if( typeof _emailMsg != 'undefined' ) {
+            $('.contactform .container.container-ovr').html(_emailMsg);
+	    $('.bodycover').css('display','block');
+            $('.contactform').css('display','block');
+	  }
+
+	})();
       </script>
     </body>
   </html>

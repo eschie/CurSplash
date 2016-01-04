@@ -33,11 +33,11 @@ if(isset($_POST['contactSubmit'])) {
 
   //If there is no error, send the email
   if(!isset($hasError)) {
-      $from_add = "support@cur.me";
+      $from_add = "contact@cur.me";
 
-      $to_add = "austin.eschenbach@gmail.com"; //<-- put your yahoo/gmail email address here
+      $to_add = "austin.eschenbach@gmail.com"; 
 
-      $subject = "Contact Form - $purpose";
+      $subject = "Contact Form Submission - $purpose";
 
       $message = "Name: $name \r\n";
       $message .= "Email: $email \r\n";
@@ -50,14 +50,14 @@ if(isset($_POST['contactSubmit'])) {
 
       if(mail($to_add,$subject,$message,$headers))
       {
-        $msg = "Mail sent OK";
+        header('Location: ?submitted');
       }
       else
       {
-         $msg = "Error sending email!";
+        header('Location: ?failed');
       }
 
-      $emailSent = true;
+      
   }
 
 }
