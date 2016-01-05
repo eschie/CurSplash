@@ -35,7 +35,7 @@ if(isset($_POST['contactSubmit'])) {
   if(!isset($hasError)) {
       $from_add = "contact@cur.me";
 
-      $to_add = "austin.eschenbach@gmail.com"; 
+      $to_add = "tan@cur.me"; 
 
       $subject = "Contact Form Submission - $purpose";
 
