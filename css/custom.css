@@ -390,7 +390,7 @@ hr.spacer{
     opacity: 0.75;
 }
 .modal-body{
-  padding: 3% 5%!important;
+  padding: 60px 5%!important;
 }
 .modal-dialog{
   margin: 0!important;
@@ -414,9 +414,11 @@ hr.spacer{
   position: absolute;
   margin: 0 !important;
   line-height: 60px;
+  font-size: 40px;
   width: 60px;
   height: 60px;
-  font-size: 80px;
+  color: white;
+  opacity: .5;
 }
 /***** MEDIA QUERIES *****/
  @media only screen and (max-width: 641px) {
