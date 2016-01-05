@@ -133,7 +133,7 @@ input{
 
 /* Hero */
 .hero{
-  background-image: url('../images/hero-bg-full-sharp.png');
+  background-image: url('../images/hero-bg-full-sharp-generic.png');
   background-size: cover;
   background-position: right center;
   color: white;
