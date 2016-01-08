@@ -207,20 +207,6 @@ error_reporting(E_ALL);
       <script type="text/javascript" src="./js/bootstrap.js"></script>
       <script type="text/javascript" src="./js/app.js"></script>
       <script type="text/javascript" src="./js/signup.js"></script>
-      <script type="text/javascript">
-	(function(){
-	  if( window.location.href.indexOf("?submitted") > -1 ) {
-            var _emailMsg = '<h3 style=\"color:white;\">Thank you!</h3><h3 style=\"color:white;\">Thanks for getting in touch! Someone from our team will contact you as soon as we can.</h3>' ;
-	  } else if (window.location.href.indexOf("?failed") > -1 ) {
-            var _emailMsg = '<h3 style=\"color:white;\">Uh Oh!</h3><h3 style=\"color:white;\">There was a problem with our mail server. Please <a href=\"mailto:contact@cur.me?Subject=Contact%20Form%20Submission\" target=\"_top\">send us an email</a> and someone from our team will contact you as soon as we can.</h3>';
-	  }
-          if( typeof _emailMsg != 'undefined' ) {
-            $('.contactform .container.container-ovr').html(_emailMsg);
-	    $('.bodycover').css('display','block');
-            $('.contactform').css('display','block');
-	  }
-
-	})();
-      </script>
+      <script type="text/javascript" src="./js/msg.js"></script>
     </body>
   </html>
